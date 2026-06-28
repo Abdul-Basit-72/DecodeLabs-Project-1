@@ -1,0 +1,206 @@
+/* -------------------------------------------------------------------------- */
+/* 1. CSS VARIABLES & DESIGN TOKENS (PDF Pillar 2: 2025 Aesthetics)          */
+/* -------------------------------------------------------------------------- */
+:root {
+    --color-mocha-mousse: #A5856F;
+    --color-ethereal-blue: #A0D4E0;
+    --color-moonlit-grey: #F2F0EA;
+    --color-dark-text: #2C2A29;
+    --color-white: #FFFFFF;
+    --font-headings: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-moonlit-grey);
+    /* Modern subtle background pattern */
+    background-image: radial-gradient(rgba(160, 212, 224, 0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--color-dark-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-headings);
+    color: var(--color-dark-text);
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. MICRO LAYOUTS WITH FLEXBOX & PREMIUM UPGRADES                           */
+/* -------------------------------------------------------------------------- */
+
+/* Glassmorphism Header */
+.app-header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px); /* Glass effect */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.logo {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    color: var(--color-dark-text);
+    letter-spacing: -0.5px;
+}
+.logo span { color: var(--color-mocha-mousse); }
+
+.app-nav { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links { display: none; list-style: none; gap: 1.8rem; }
+
+/* Smooth Link Hover Effect */
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-dark-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-mocha-mousse);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--color-mocha-mousse); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+/* Modern Glow Button */
+.nav-btn {
+    background-color: var(--color-mocha-mousse);
+    color: var(--color-white);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-family: var(--font-headings);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(165, 133, 111, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(165, 133, 111, 0.5);
+    background-color: #8c6e5a;
+}
+
+.menu-toggle { display: block; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--color-dark-text); }
+.nav-links.active-menu { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--color-white); padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.05); gap: 1rem; border-top: 1px solid #eee; }
+
+/* Sidebar Setup */
+.app-sidebar { background-color: var(--color-white); padding: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.app-sidebar h3 { font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--color-mocha-mousse); text-transform: uppercase; letter-spacing: 1.5px; }
+.app-sidebar ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; }
+.app-sidebar a { text-decoration: none; color: #555; font-size: 0.95rem; transition: color 0.3s ease; }
+.app-sidebar a:hover { color: var(--color-mocha-mousse); font-weight: 500; }
+
+.app-main { padding: 1.5rem; }
+
+/* Beautiful Gradient Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-ethereal-blue) 100%);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(160, 212, 224, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+.hero-section h1 { font-size: 2.2rem; margin-bottom: 1rem; letter-spacing: -0.5px; line-height: 1.2; }
+.hero-section p { font-size: 1.1rem; color: #444; max-width: 600px; margin: 0 auto; }
+
+/* Modern Lift-on-Hover Cards */
+.content-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+
+.content-card {
+    background-color: var(--color-white);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border-top: 4px solid var(--color-mocha-mousse);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+.content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(165, 133, 111, 0.15);
+    border-top: 4px solid var(--color-ethereal-blue);
+}
+
+.card-icon {
+    font-family: var(--font-headings);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(165, 133, 111, 0.15);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+.content-card:hover .card-icon { color: var(--color-mocha-mousse); }
+
+.content-card h2 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+.content-card p { color: #555; font-size: 0.95rem; }
+
+/* Footer */
+.app-footer { background-color: var(--color-dark-text); color: var(--color-moonlit-grey); text-align: center; padding: 2.5rem 1.5rem; font-size: 0.9rem; }
+.app-footer p { margin-bottom: 0.5rem; opacity: 0.8; }
+
+/* -------------------------------------------------------------------------- */
+/* 3. MACRO LAYOUT WITH CSS GRID (Responsive Desktop Viewports)               */
+/* -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    .page-wrapper {
+        display: grid;
+        grid-template-areas: 
+            "header header"
+            "sidebar main"
+            "footer footer";
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    .app-header { grid-area: header; padding: 1.2rem 4rem; }
+    .menu-toggle { display: none; }
+    .nav-links { display: flex; }
+
+    .app-sidebar {
+        grid-area: sidebar;
+        border-right: 1px solid rgba(0,0,0,0.05);
+        border-bottom: none;
+        background-color: transparent;
+        padding: 3rem 2rem;
+    }
+    .app-sidebar ul { flex-direction: column; gap: 1.5rem; }
+    .sidebar-sticky { position: sticky; top: 100px; }
+
+    .app-main { grid-area: main; padding: 3rem 4rem; }
+    .hero-section { padding: 6rem 4rem; text-align: left; }
+    .hero-section h1 { font-size: 3.5rem; }
+    .hero-section p { margin: 0; font-size: 1.2rem; }
+
+    .content-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .app-footer { grid-area: footer; display: flex; justify-content: space-between; padding: 2rem 4rem; }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecodeLabs - Project 1 (Responsive Layout)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+        
+        <header class="app-header">
+            <div class="logo">Decode<span>Labs</span></div>
+            <nav class="app-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Projects</a></li>
+                </ul>
+                <button class="nav-btn">Build Future</button>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                ☰
+            </button>
+        </header>
+
+        <aside class="app-sidebar">
+            <div class="sidebar-sticky">
+                <h3>Directives</h3>
+                <ul>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Semantic Integrity</a></li>
+                    <li><a href="#">2025 Aesthetics</a></li>
+                    <li><a href="#">WCAG Compliance</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="app-main">
+            
+            <section class="hero-section">
+                <h1>THE FUTURE OF DIGITAL CRAFT</h1>
+                <p>Design is an iterative process that blends precision with empathy.</p>
+            </section>
+
+            <section class="content-grid">
+                
+                <article class="content-card">
+                    <div class="card-icon">01</div>
+                    <h2>Semantic Integrity</h2>
+                    <p>Building the bedrock of accessibility and SEO using landmark elements instead of plain components.</p>
+                </article>
+
+                <article class="content-card">
+                    <div class="card-icon">02</div>
+                    <h2>Mobile-First Logic</h2>
+                    <p>Architecting for the mobile web seamlessly, expanding beautifully to desktop viewports using structured media queries.</p>
+                </article>
+
+                <article class="content-card">
+                    <div class="card-icon">03</div>
+                    <h2>Warm Aesthetics</h2>
+                    <p>Moving away from sterile tech layouts into grounded, comfortable user experiences with human-centric typography.</p>
+                </article>
+
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 DecodeLabs Internship Program. All Rights Reserved.</p>
+            <p>Digital Craftsmanship | Universal Access Adherence</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
